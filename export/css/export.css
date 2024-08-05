@@ -1,0 +1,66 @@
+.ff_ie {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 20px;
+    gap: 40px;
+}
+.ff_ie_right {
+    flex-shrink: 0;
+}
+
+.ff_ie_preview {
+    display: none;
+    border: 1px solid #d3d3d3;
+    padding: 20px;
+    margin-top: 53px;
+    border-radius: 3px;
+    max-width: 100%;
+    background: #fbfbfb;
+    max-height: 100%;
+    overflow: auto;
+    width: 800px;
+    height: 560px;
+}
+.ff_ie_preview.show {
+    display: block;
+}
+
+.ff_ie .spinner {
+    visibility: visible;
+    float: none;
+}
+
+#csv_fields_select {
+    margin: 40px 0;
+}
+
+#csv_fields {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 15px 0;
+}
+
+/* .more_settings {
+    display: none;
+}
+.show_more_settings .more_settings {
+    display: block;
+} */
+
+.mb-10 { margin-bottom: 10px; }
+.mt-10 { margin-top: 10px; }
+
+.mb-30 { margin-bottom: 30px; }
+.mt-30 { margin-top: 30px; }
+
+
+.mb-40 { margin-bottom: 40px; }
+.mt-40 { margin-top: 40px; }
+
+
+.bold {  font-weight: bold; }
+
+.w_80 { width: 80px; }
+.w_260 { width: 260px; }

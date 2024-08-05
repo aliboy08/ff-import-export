@@ -1,0 +1,136 @@
+.ff_ie {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 40px;
+    padding: 30px 20px;
+}
+
+.ff_ie_left {
+    width: 600px;
+}
+.ff_ie_right {
+    flex-shrink: 0;
+}
+
+.ff_ie_preview {
+    display: none;
+    border: 1px solid #d3d3d3;
+    padding: 20px;
+    margin-top: 53px;
+    border-radius: 3px;
+    max-width: 100%;
+    background: #fbfbfb;
+    max-height: 100%;
+    overflow: auto;
+    width: 800px;
+    height: 560px;
+}
+.ff_ie_preview.show {
+    display: block;
+}
+
+.ff_ie .spinner {
+    visibility: visible;
+    float: none;
+}
+
+.import_progress {
+    display: none;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.import_progress.start {
+    display: block;
+}
+
+.import_progress .l {
+    margin-right: 10px;
+}
+
+.import_progress .spinner {
+    display: inline-block;
+    float: none;
+    margin: 0px 5px;
+    visibility: visible;
+}
+
+.import_progress.complete .spinner {
+    visibility: hidden;
+}
+
+#import_start {
+    display: none;
+}
+#import_start.enable {
+    display: inline-block;
+}
+
+.map_fields .item {
+    border: 1px solid #eee;
+    padding: 10px;
+    background: #fff;
+}
+
+.grid {
+    display: grid;
+}
+.grid.cols-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.flex {
+    display: flex;
+}
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.v-center {
+    align-items: center;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+
+
+.gap-10 { gap: 10px; }
+.gap-20 { gap: 20px; }
+.gap-30 { gap: 30px; }
+
+/* .more_settings {
+    display: none;
+}
+.show_more_settings .more_settings {
+    display: block;
+} */
+
+.mb-10 { margin-bottom: 10px; }
+.mt-10 { margin-top: 10px; }
+
+.mb-20 { margin-bottom: 20px; }
+.mt-20 { margin-top: 20px; }
+
+.mb-30 { margin-bottom: 30px; }
+.mt-30 { margin-top: 30px; }
+
+.mb-40 { margin-bottom: 40px; }
+.mt-40 { margin-top: 40px; }
+
+
+.bold {  font-weight: bold; }
+
+.w_80 { width: 80px; }
+.w_260 { width: 260px; }
+.w_full { width: 100%; }
+
+.mr-10 { margin-right: 10px; }
+.ml-10 { margin-left: 10px; }
