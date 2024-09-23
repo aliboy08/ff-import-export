@@ -427,69 +427,7 @@ class Export {
             $this->set_nested_terms($parent_term, $parent_terms, $term_nest[$parent_term->term_id]['parent']);
         }
     }
-
-    // function get_taxonomy_terms_old( $post_id, $taxonomies ){
-
-    //     $taxonomy_terms_all = [];
-
-    //     foreach( $taxonomies as $taxonomy ) {
-            
-    //         $terms = wp_get_post_terms( $post_id, $taxonomy );
-    //         if( !$terms ) continue;
-
-    //         $taxonomy_terms = [
-    //             'taxonomy' => $taxonomy,
-    //             'terms' => [],
-    //         ];
-    //         foreach( $terms as $term ) {
-    //             $taxonomy_terms['terms'][] = $term->name;
-    //         }
-
-    //         $taxonomy_terms_all[] = $taxonomy_terms;
-
-    //     }
-
-    //     return $taxonomy_terms_all;
-    // }
-
-    // function get_parent_terms_data($terms){
     
-    //     $data = [
-    //         'existing_parents' => [],
-    //         'included_parents' => [],
-    //         'included_parents_terms' => [],
-    //     ];
-        
-    //     foreach( $terms as $term ) {
-    //         if( $term->parent !== 0 ) {
-    //             // child
-                
-    //             if( in_array( $term->parent, $data['existing_parents']) ) {
-    //                 continue; // parent data already included
-    //             }
-    
-    //             if( !isset($data['included_parents'][$term->parent]) ) {
-    //                 // parent data not included, get data
-    //                 $included_parent = get_term($term->parent, $term->taxonomy);
-    //                 $data['included_parents'][$term->parent] = $included_parent;
-    //                 $data['included_parents'][$term->parent]->child_terms = [];
-    //             }
-    
-    //             $data['included_parents'][$term->parent]->child_terms[] = $term->term_id;
-    //             $data['included_parents_terms'][] = $term->term_id;
-    //         }
-    //         else {
-    //             // parent
-    //             if( !in_array( $term->term_id, $data['existing_parents']) ) {
-    //                 $data['existing_parents'][] = $term->term_id;
-    //             }
-    //         }
-            
-    //     }
-    
-    //     return $data;
-    // }
-
     function get_featured_image_url( $post_id, $data_settings = false ) {
         if( $data_settings && !$data_settings['featured_image'] ) return '';
         if( !has_post_thumbnail( $post_id ) ) return '';
@@ -512,7 +450,7 @@ class Export {
 
         $file_extension = 'json';
         $file_name = 'export-'. $type . '-' . date('Y-m-d-h-i-s') .'.'. $file_extension;
-        $file_path = FFIE_PLUGIN_DIR .'temp/'. $file_name;
+        $file_path = FFIE_DIR .'/temp/'. $file_name;
         $file = fopen($file_path, "w") or die('Unable to create file');
         
         $content = json_encode($data['items']);
@@ -521,7 +459,7 @@ class Export {
 
         return [
             'path' => $file_path,
-            'url' => FFIE_PLUGIN_URL . 'temp/'. $file_name,
+            'url' => FFIE_URL . '/temp/'. $file_name,
             'name' => $file_name,
         ];
     }

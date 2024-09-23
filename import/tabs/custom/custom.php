@@ -43,7 +43,7 @@
 </div>
 
 <?php
-wp_enqueue_script( 'ff-import-custom', FFIE_PLUGIN_URL . 'import/tabs/custom/js/import-custom.js', ['ff-import'], null, true );
+wp_enqueue_script( 'ff-import-custom', FFIE_URL . '/import/tabs/custom/js/import-custom.js', ['ff-import'], null, true );
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', () => {

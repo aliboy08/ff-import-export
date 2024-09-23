@@ -1,10 +1,10 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) die();
 
-wp_enqueue_style( 'ff-import-export', FFIE_PLUGIN_URL . 'assets/css/ff-import-export.css' );
+wp_enqueue_style( 'ff-import-export', FFIE_URL . '/assets/css/ff-import-export.css' );
 
 wp_enqueue_media();
-wp_enqueue_script( 'ff-import', FFIE_PLUGIN_URL . 'import/js/import.js', [], null, true );
+wp_enqueue_script( 'ff-import', FFIE_URL . '/import/js/import.js', [], null, true );
 
 $custom_types = apply_filters( 'ff_import_custom_types', [] );
 
@@ -12,7 +12,7 @@ $tabs = [
     [
         'title' => 'Default',
         'slug' => 'default',
-        'file' => FFIE_PLUGIN_DIR . 'import/tabs/default/default.php',
+        'file' => FFIE_DIR . '/import/tabs/default/default.php',
     ],
 ];
 
@@ -20,7 +20,7 @@ if( $custom_types ) {
     $tabs[] = [
         'title' => 'Custom',
         'slug' => 'custom',
-        'file' => FFIE_PLUGIN_DIR . 'import/tabs/custom/custom.php',
+        'file' => FFIE_DIR . '/import/tabs/custom/custom.php',
     ];
 }
 

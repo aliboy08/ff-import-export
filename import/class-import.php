@@ -5,7 +5,7 @@ use \WP_Query as WP_Query;
 
 class Import {
 
-    public $template_dir = FFIE_PLUGIN_DIR .'import/templates/';
+    public $template_dir = FFIE_DIR .'/import/templates/';
 
     public function __construct() {
         add_action( 'admin_menu', [ $this, 'create_admin_menu' ] );

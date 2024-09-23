@@ -3,7 +3,7 @@
  * Plugin Name: FF Import & Export
  * Plugin URI: https://www.fivebyfive.com.au/
  * Description: Import and export posts or other data
- * Version: 2.1.6
+ * Version: 2.1.7
  * Author: Five by Five
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -11,9 +11,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) die();
 
-define( 'FFIE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'FFIE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'FFIE_PLUGIN_FILE', __FILE__ );
+$dir = str_replace('\\', '/', __DIR__ );
+define( 'FFIE_DIR', $dir );
+
+$url = str_replace($_SERVER['DOCUMENT_ROOT'], get_bloginfo('url'), $dir );
+define( 'FFIE_URL', $url );
 
 include_once 'functions.php';
 
@@ -21,7 +23,6 @@ include_once 'import/class-import.php';
 new \FFIE\Import();
 include_once 'export/class-export.php';
 new \FFIE\Export();
-
 
 // Extension sample:
 // add_filter( 'ff_export_types', function( $types ){
@@ -54,12 +55,10 @@ new \FFIE\Export();
 //     return $items;
 // }, 10, 2 );
 
-
 // add_filter('ff_import_custom_types', function($types){
 //     $types['custom'] = 'Custom';
 //     return $types;
 // });
-
 
 // add_action('ff_import_data_custom', function($item, $ff_import){    
 
